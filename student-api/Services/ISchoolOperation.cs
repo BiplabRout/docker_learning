@@ -5,8 +5,10 @@ namespace student_api.Services
 {
 	public interface ISchoolOperation
 	{
-		public List<StudentDetails> GetAllStudent();
-		public StudentDetails GetStudentDetails(String stdName);
-	}
+		public IEnumerable<Studentdetail> GetBtechAllStudent();
+		public Studentdetail GetBtechStudentDetails(String stdName);
+        public IEnumerable<Mbastudentdetail> GetMbaAllStudent();
+        public Mbastudentdetail GetMbaStudentDetails(String stdName);
+    }
 }
 

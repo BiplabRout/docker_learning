@@ -6,25 +6,25 @@ namespace student_api.Operations
 {
 	public class MbaStudentOperation : ISchoolOperation
 	{
-        List<StudentDetails> stdList = new List<StudentDetails>
+        List<Mbastudentdetail> stdList = new List<Mbastudentdetail>
             {
-                new StudentDetails
+                new Mbastudentdetail
                 {
-                    StdName="biplab",
-                    StdGrade="A",
-                    StdMark=50
+                    Mbastdname="biplab",
+                    Mbastdgrade="A",
+                    Mbastdmark=50
                 },
-                new StudentDetails
+                new Mbastudentdetail
                 {
-                    StdName="Happy",
-                    StdGrade="B",
-                    StdMark=70
+                    Mbastdname="Happy",
+                    Mbastdgrade="B",
+                    Mbastdmark=70
                 },
-                new StudentDetails
+                new Mbastudentdetail
                 {
-                    StdName="rout",
-                    StdGrade="C",
-                    StdMark=90
+                    Mbastdname="rout",
+                    Mbastdgrade="C",
+                    Mbastdmark=90
                 }
             };
         public MbaStudentOperation() 
@@ -32,17 +32,27 @@ namespace student_api.Operations
 
 		}
 
-		public List<StudentDetails> GetAllStudent()
+        public IEnumerable<Studentdetail> GetBtechAllStudent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Studentdetail GetBtechStudentDetails(string stdName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Mbastudentdetail> GetMbaAllStudent()
 		{
             return stdList;
         }
 
-        public StudentDetails GetStudentDetails(String stdName)
+        public Mbastudentdetail GetMbaStudentDetails(String stdName)
         {
-            StudentDetails s = new StudentDetails();
+            Mbastudentdetail s = new Mbastudentdetail();
             foreach(var x in stdList)
             {
-                if(x.StdName.Equals(stdName))
+                if(x.Mbastdname.Equals(stdName))
                 {
                     s = x;
                     break;

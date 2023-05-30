@@ -1,0 +1,28 @@
+services:
+  db:
+    profiles:
+      -  development
+    image:  db
+    container_name:  postgress-db
+    volumes:
+      -  db-data:/var/lib/postgresql/data
+    ports:
+      -  "5432:5432"
+    environment:
+      -  POSTGRES_USER=postgres
+      -  POSTGRES_PASSWORD=example
+  app:
+    profiles:
+      -  development
+    image: student-api
+    container_name: api-server
+    ports:
+      - "8000:80"
+
+volumes:
+  db-data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ~/sqldata

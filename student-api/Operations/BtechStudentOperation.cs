@@ -6,25 +6,25 @@ namespace student_api.Operations
 {
     public class BtechStudentOperation : ISchoolOperation
     {
-        List<StudentDetails> stdList = new List<StudentDetails>
+        List<Studentdetail> stdList = new List<Studentdetail>
             {
-                new StudentDetails
+                new Studentdetail
                 {
-                    StdName="rahul",
-                    StdGrade="A",
-                    StdMark=50
+                    Stdname="rahul",
+                    Stdgrade="A",
+                    Stdmark=50
                 },
-                new StudentDetails
+                new Studentdetail
                 {
-                    StdName="siba",
-                    StdGrade="B",
-                    StdMark=70
+                    Stdname="siba",
+                    Stdgrade="B",
+                    Stdmark=70
                 },
-                new StudentDetails
+                new Studentdetail
                 {
-                    StdName="aditya",
-                    StdGrade="C",
-                    StdMark=90
+                    Stdname="aditya",
+                    Stdgrade="C",
+                    Stdmark=90
                 }
             };
         public BtechStudentOperation()
@@ -32,17 +32,17 @@ namespace student_api.Operations
 
         }
 
-        public List<StudentDetails> GetAllStudent()
+        public IEnumerable<Studentdetail> GetBtechAllStudent()
         {
             return stdList;
         }
 
-        public StudentDetails GetStudentDetails(String stdName)
+        public Studentdetail GetBtechStudentDetails(String stdName)
         {
-            StudentDetails s = new StudentDetails();
+            Studentdetail s = new Studentdetail();
             foreach (var x in stdList)
             {
-                if (x.StdName.Equals(stdName))
+                if (x.Stdname.Equals(stdName))
                 {
                     s = x;
                     break;
@@ -52,6 +52,15 @@ namespace student_api.Operations
             return s;
         }
 
+        public IEnumerable<Mbastudentdetail> GetMbaAllStudent()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Mbastudentdetail GetMbaStudentDetails(string stdName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

@@ -23,15 +23,15 @@ namespace student_api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<StudentDetails> GetAllBtechStudent()
+        public IEnumerable<Studentdetail> GetAllBtechStudent()
         {
             // Get all registered implementations of IReminderService
             var test = _serviceProvider.GetServices<ISchoolOperation>();
 
             // Get required implementation from the collection
-            var btechService = test.FirstOrDefault(x => x.GetType() == typeof(BtechStudentOperation));
+            var btechService = test.FirstOrDefault(x => x.GetType() == typeof(SqlBtechStudentOperation));
 
-            return btechService.GetAllStudent();
+            return btechService.GetBtechAllStudent();
         }
     }
 }
