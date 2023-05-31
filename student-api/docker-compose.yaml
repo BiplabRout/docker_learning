@@ -2,7 +2,7 @@ services:
   db:
     profiles:
       -  development
-    image:  db
+    image:  postgres
     container_name:  postgress-db
     volumes:
       -  db-data:/var/lib/postgresql/data
