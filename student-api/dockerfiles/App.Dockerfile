@@ -2,11 +2,11 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 as build
 WORKDIR /app
 
 #copy csproj file to resotre pakages 
-COPY *.csproj ./
+COPY ./../*.csproj ./
 RUN dotnet restore
 
 # publish and build application
-COPY . ./
+COPY ./../ ./
 RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0

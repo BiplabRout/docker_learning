@@ -15,6 +15,11 @@ services:
     profiles:
       -  development
     image: student-api
+    build:
+      # the "context" refer the starting location of Dockerfile and the starting location should always be at same level of docker-compose
+      context:  dockerfiles
+      # the "dockerfile" refer to the relative docker file location with respect to "context"
+      dockerfile: ./App.Dockerfile
     container_name: api-server
     ports:
       - "8000:80"
